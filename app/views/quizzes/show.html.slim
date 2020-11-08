@@ -1,0 +1,18 @@
+h1
+  = @quiz.name
+
+h2 Questions
+- @quiz.questions.each_with_index do |question, index|
+  .ml-5
+    h3
+      = index + 1
+      = question.title
+      = question.type
+      - question.answers.each do |answer|
+        .ml-5
+          h3 Answers
+          h6
+            = answer.id
+            = answer.text
+
+= link_to "Delete", quiz_path(quiz: { id: @quiz.id }), method: :delete

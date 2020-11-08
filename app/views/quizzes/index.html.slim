@@ -1,0 +1,10 @@
+h1 Quizzes
+
+- @quizzes.each do |quiz|
+  p
+    = quiz.name
+    = link_to "Review", quiz_path(quiz, quiz: { id: quiz.id })
+
+= link_to "Create new quiz", new_quiz_path
+
+
